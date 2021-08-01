@@ -7,7 +7,9 @@ const Navigasi = () => {
         <header>
             <nav className="bg-light d-md-block d-none navbar shadow-sm fixed-top">
                 <div className="container justify-content-between align-items-center">
-                        <img src={logo} alt="" height="35px" width="auto" />
+                        <div href="#home">
+                            <img src={logo} alt="" height="35px" width="auto" />
+                        </div>
                     <form className="col-6 text-end" action>
                         <input
                             type="text"
@@ -15,19 +17,19 @@ const Navigasi = () => {
                             placeholder="Search"
                         />
                         <button className="sort">
-                            <img src="../asset/sort.png" />
+                            <img src="../asset/sort.png" alt="" />
                         </button>
                     </form>
                     <div className="col-4 text-end box-info">
-                        <a href="My-Bag/mybag_index.html">
-                            <img className="me-3" src="../asset/shopping chart.png" />
-                        </a>
-                        <a href="Login_page/login_customer.html">
+                        <div href="My-Bag/mybag_index.html">
+                            <img className="me-3" src="../asset/shopping chart.png" alt="" />
+                        </div>
+                        <div href="Login_page/login_customer.html">
                             <button className="btn-login text-reguler">Login</button>
-                        </a>
-                        <a href="#">
+                        </div>
+                        <div href="#">
                             <button className="btn-signup text-reguler">Signup</button>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </nav>
