@@ -1,6 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
 import logo from "../asset/logo.png";
+import sort from "../asset/sort.png";
+import shopping_chart from "../asset/shopping chart.png"
+import icon_home from "../asset/home_icon.png";
+import icon_shop from "../asset/cart_icon.png";
+import icon_bag from "../asset/shoppingbag_icon.svg";
+import icon_favorite from "../asset/favorite_icon.png";
+import icon_profile from "../asset/profile_icon.png";
 
 const Navigasi = () => {
     return (
@@ -17,12 +24,12 @@ const Navigasi = () => {
                             placeholder="Search"
                         />
                         <button className="sort">
-                            <img src="../asset/sort.png" alt="" />
+                            <img src={sort} alt="" />
                         </button>
                     </form>
-                    <div className="col-4 text-end box-info">
+                    <div className="col-4 text-end d-flex justify-content-end align-items-center">
                         <div href="My-Bag/mybag_index.html">
-                            <img className="me-3" src="../asset/shopping chart.png" alt="" />
+                            <img className="me-3" src={shopping_chart} alt="" />
                         </div>
                         <div href="Login_page/login_customer.html">
                             <button className="btn-login text-reguler">Login</button>
@@ -36,7 +43,7 @@ const Navigasi = () => {
             <nav className="bg-light d-md-none d-block navbar shadow-sm fixed-top">
                 <div className="container justify-content-center align-items-center">
                     <a className="navbar-brand" href="./home.html">
-                        <img src="../asset/logo.png" alt="" height="35px" width="auto" />
+                        <img src={logo} alt="" height="35px" width="auto" />
                     </a>
                 </div>
             </nav>
@@ -49,7 +56,7 @@ const Navigasi = () => {
                         >
                             <img
                                 className="nav-icon"
-                                src="../asset/Mockup Web (4)/home icon/inactive.png"
+                                src={icon_home}
                                 alt=""
                             />
                             <span className="nav-title">Home</span>
@@ -62,7 +69,7 @@ const Navigasi = () => {
                         >
                             <img
                                 className="nav-icon"
-                                src="../asset/Mockup Web (3)/shop icon/inactive.png"
+                                src={icon_shop}
                                 alt=""
                             />
                             <span className="nav-title">Shop</span>
@@ -75,7 +82,7 @@ const Navigasi = () => {
                         >
                             <img
                                 className="nav-icon"
-                                src="../asset/Mockup Web (2)/shopping_bag icon/inactive.svg"
+                                src={icon_bag}
                                 alt=""
                             />
                             <span className="nav-title">Bag</span>
@@ -88,7 +95,7 @@ const Navigasi = () => {
                         >
                             <img
                                 className="nav-icon"
-                                src="../asset/Mockup Web (5)/heart icon/inactive.png"
+                                src={icon_favorite}
                                 alt=""
                             />
                             <span className="nav-title">Favorites</span>
@@ -101,7 +108,7 @@ const Navigasi = () => {
                         >
                             <img
                                 className="nav-icon"
-                                src="../asset/Mockup Web (6)/profile icon/account_circle.png"
+                                src={icon_profile}
                                 alt=""
                             />
                             <span className="nav-title">Profile</span>

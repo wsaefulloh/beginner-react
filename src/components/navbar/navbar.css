@@ -117,14 +117,14 @@ main {
 }
 
 .carousel-control-prev-icon {
-    background-image: url(../asset/white-24dp/1x/outline_first_page_white_24dp.png);
+    background-image: url(../asset/outline_prev_page.png);
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100% 100%;
 }
 
 .carousel-control-next-icon {
-    background-image: url("../asset/white-24dp (1)/1x/outline_last_page_white_24dp.png");
+    background-image: url(../asset/outline_next_page.png);
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100% 100%;
