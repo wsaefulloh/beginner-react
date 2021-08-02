@@ -14,7 +14,7 @@ const Navigasi = () => {
         <header>
             <nav className="bg-light d-md-block d-none navbar shadow-sm fixed-top">
                 <div className="container justify-content-between align-items-center">
-                        <div href="#home">
+                        <div className="navbar-brand" href="#home">
                             <img src={logo} alt="" height="35px" width="auto" />
                         </div>
                     <form className="col-6 text-end" action>
