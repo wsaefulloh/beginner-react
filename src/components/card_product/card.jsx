@@ -8,7 +8,7 @@ function Cards(props) {
     return (
         <div className="col py-3">
             <div className="card shadow-sm h-100">
-                <img className="card-img-top" src={props.image_product} alt="" />
+                    <img className="card-img-top img-product" src={props.image_product} alt=""/>
                 <div className="m-0 card-body">
                     <h6 className="m-0 text-bold">{props.name_product}</h6>
                     <div className="price text-bold">{`Rp. ${props.price_product}`}</div>

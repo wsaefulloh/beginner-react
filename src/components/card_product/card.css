@@ -137,3 +137,8 @@ main {
 .carousel-box {
     margin-top: 80px;
 }
+
+.img-product {
+    height: 202px;
+    object-fit: contain;
+}

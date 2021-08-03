@@ -33,6 +33,7 @@ class App extends Component {
         <Navigasi />
         <Carousel />
         <Category />
+
         <section className="container">
           <div className="my-5">
             <div className="my-3">
@@ -40,6 +41,30 @@ class App extends Component {
               <small className="text-secondary text-reguler">You've never seen it before!</small>
             </div>
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
+
+              {this.state.prods.map((val) => {
+                return (
+                  <Cards
+                    image_product={val.image_product}
+                    name_product={val.name_product}
+                    price_product={val.price_product}
+                    brand_product={val.brand_product}
+                  />
+                )
+              })}
+
+            </div>
+          </div>
+        </section>
+
+        <section className="container">
+          <div className="my-5">
+            <div className="my-3">
+              <h3 className="text-bold m-0">Popular</h3>
+              <small className="text-secondary text-reguler">Find clothes that are trending recently</small>
+            </div>
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
+
               {this.state.prods.map((val) => {
                 return (
                   <Cards
