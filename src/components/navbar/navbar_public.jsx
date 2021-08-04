@@ -8,15 +8,18 @@ import icon_shop from "../asset/cart_icon.png";
 import icon_bag from "../asset/shoppingbag_icon.svg";
 import icon_favorite from "../asset/favorite_icon.png";
 import icon_profile from "../asset/profile_icon.png";
+import { Link } from "react-router-dom"
 
 const Navigasi = () => {
     return (
         <header>
             <nav className="bg-light d-md-block d-none navbar shadow-sm fixed-top">
                 <div className="container justify-content-between align-items-center">
+                        <Link to='/'>
                         <div className="navbar-brand" href="#home">
                             <img src={logo} alt="" height="35px" width="auto" />
                         </div>
+                        </Link>
                     <form className="col-6 text-end" action>
                         <input
                             type="text"

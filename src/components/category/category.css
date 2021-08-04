@@ -70,10 +70,10 @@ main {
     border: 0;
     background: #db3022;
     border-radius: 25px;
-    width: 80px;
+    width: 15%;
     height: 36px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     color: #ffffff;
 }
@@ -81,14 +81,13 @@ main {
 .btn-signup {
     background: #ffffff;
     border-radius: 25px;
-    border: 1px solid #9b9b9b;
-    width: 80px;
+    border: 1px solid #222222;
+    width: 15%;
     height: 36px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
-    color: #9b9b9b;
-    margin-left: 5px;
+    color: #222222;
 }
 
 .nav-icon {

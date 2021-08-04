@@ -49,6 +49,7 @@ class App extends Component {
                     name_product={val.name_product}
                     price_product={val.price_product}
                     brand_product={val.brand_product}
+                    id_product={val.id_product}
                   />
                 )
               })}
