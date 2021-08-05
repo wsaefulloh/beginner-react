@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Cards(props) {
     return (
-        <main>
+        <main className="container">
             <section className="container">
                 <div className="my-3">
                     <span className="text-span">Home &gt; Category &gt; {props.category}</span>
@@ -32,15 +32,15 @@ function Cards(props) {
                             <p className="desc-product text-reguler mb-2">Price</p>
                             <h4 className="text-bold m-0 p-0 mb-4">Rp. <span>{props.price_product}</span></h4>
                             <div className="d-flex justify-content-start">
-                                <button className="btn-signup p-0 m-0 mx-2 text-reguler" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
+                                <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
                                 <div>
-                                    <button className="btn-signup p-0 m-0 mx-2 text-reguler">Delete</button>
+                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler">Delete</button>
                                 </div>
                                 <div>
-                                    <button className="btn-signup p-0 m-0 mx-2 text-reguler">Add Bag</button>
+                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler">Add Bag</button>
                                 </div>
                                 <div>
-                                    <button className="btn-login p-0 m-0 mx-2 text-reguler">Buy Now</button>
+                                    <button className="btn-login-d p-0 m-0 mx-2 text-reguler">Buy Now</button>
                                 </div>
                             </div>
                         </div>

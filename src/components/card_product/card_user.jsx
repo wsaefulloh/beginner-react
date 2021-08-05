@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Cards(props) {
     return (
         <div className="col py-3">
-            <Link to={`/p/${props.id_product}`}>
+            <Link to={`/home/p/${props.id_product}`}>
                 <div className="card shadow-sm h-100">
                     <img className="card-img-top img-product" src={props.image_product} alt=""/>
                     <div className="m-0 card-body">

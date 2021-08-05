@@ -1,10 +1,10 @@
 @font-face {
-	src: url("../asset/Metropolis Font family/Metropolis-Regular.otf");
+	src: url("../../components/asset/Metropolis Font family/Metropolis-Regular.otf");
 	font-family: Metropolis-Regular;
 }
 
 @font-face {
-	src: url("../asset/Metropolis Font family/Metropolis-Bold.otf");
+	src: url("../../components/asset/Metropolis Font family/Metropolis-Bold.otf");
 	font-family: Metropolis-Bold;
 }
 
@@ -14,6 +14,10 @@
 
 .text-bold {
     font-family: Metropolis-Bold;
+}
+
+.profile-page {
+    background-color: #F5F5F5;
 }
 
 a:hover {
@@ -41,16 +45,11 @@ main {
     margin-bottom: 80px;
 }
 
-.search-box {
-    height: 30px;
-    width: 80%;
-    padding: 0px 20px;
+.search-box-p {
+    height: 40px;
+    width: 50%;
     border: 1px solid #8e8e8e;
-    border-radius: 23px;
-    background-image: url(../asset/Search.png);
-    background-repeat: no-repeat;
-    background-position-x: 97%;
-    background-position-y: center;
+    border-radius: 4px;
     box-sizing: border-box;
     font-style: normal;
     font-weight: 500;
@@ -58,36 +57,28 @@ main {
     color: #9b9b9b;
 }
 
-.sort {
-    height: 30px;
-    border: 1px solid #8e8e93;
-    margin: 0px 10px;
-    border-radius: 12px;
-    background: #ffffff;
-}
-
-.btn-login-d {
+.btn-login-p {
     border: 0;
     background: #db3022;
     border-radius: 25px;
-    width: 100px;
+    width: 22%;
     height: 36px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     color: #ffffff;
 }
 
-.btn-signup-d {
+.btn-signup-p {
     background: #ffffff;
     border-radius: 25px;
-    border: 1px solid #9b9b9b;
-    width: 100px;
+    border: 1px solid #222222;
+    width: 22%;
     height: 36px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
-    color: #9b9b9b;
+    color: #222222;
 }
 
 .nav-icon {
@@ -100,10 +91,8 @@ main {
     font-size: 10px;
 }
 
-.text-span {
-    margin: 0;
-    color: #8e8e8e;
-    font-size: 12px;
+.profile-img {
+    width: 5%;
 }
 
 .desc-product {
@@ -111,16 +100,14 @@ main {
     color: #9b9b9b;
 }
 
-.justify {
-    text-align: justify;
-}
-
-.detail-product {
+.desc-box {
+    height: 100px;
+    width: 50%;
+    border: 1px solid #8e8e8e;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 500;
     font-size: 14px;
     color: #9b9b9b;
-}
-
-.image-prods {
-    width: 300px;
-    object-fit: contain;
 }

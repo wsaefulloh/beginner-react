@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Navigasi from '../../components/navbar/navbar_public'
+import Navigasi from '../../components/navbar/navbar_user'
 import Carousel from '../../components/carousel/carousel.jsx'
 import Category from '../../components/category/category.jsx'
-import Cards from '../../components/card_product/card.jsx'
+import Cards from '../../components/card_product/card_user.jsx'
 import axios from "axios"
 import "../home/index.css"
 import "bootstrap/dist/css/bootstrap.min.css";
