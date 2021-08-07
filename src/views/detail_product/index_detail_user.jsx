@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navigasi from '../../components/navbar/navbar_user'
-import Detail from '../../components/detail_page/detail'
+import Detail from '../../components/detail_page/detail_user'
 import axios from "axios"
 import "../detail_product/index_detail.css"
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -24,8 +24,19 @@ class App extends Component {
             this.setState({
                 prods: res.data.result,
             })
+            
         })
     }
+
+    // DeleteHandler = async () => {
+    //     try {
+    //         const id_product = this.props.match.url;
+    //         const res = await axios.delete(`http://localhost:9000/product/del${id_product}`);
+    //         console.log(res)
+    //     } catch (error) {
+    //         console.error(error.message);
+    //     }
+    // }
 
     render() {
         return (
@@ -40,6 +51,7 @@ class App extends Component {
                     brand_product={val.brand_product}
                     description={val.description}
                     category={val.category}
+                    id_product={val.id_product}
                   />
                 )
               })}

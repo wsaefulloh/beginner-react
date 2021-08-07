@@ -5,6 +5,7 @@ import "../profile_page/profile.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom"
 import FormData from 'form-data'
+import imgprofile from '../../components/asset/Mask Group.png'
 
 class App extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class App extends Component {
             body.append('image',this.state.image);
             body.append('description',this.state.description);
             const res = await axios.post('http://localhost:9000/product/add', body, {'Content-type':'multipart/form-data',});
+            alert('berhasil upload')
             console.log(res)
         } catch (error) {
             console.error(error.message);
@@ -72,12 +74,12 @@ class App extends Component {
         return (
             <div>
                 <Navigasi />
-                <main className="profile-page">
+                <div className="profile-page">
                     <div className="container">
                         {/* profile */}
                         <div className="col-12 bg-white shadow-sm py-4">
                             <div className="text-center">
-                                <img className="col-1" src="../asset/Mask Group.png" alt="" />
+                                <img className="col-1" src={imgprofile} alt="" />
                                 <h5 className="text-bold m-0 mt-3">Johanes Mikael</h5>
                                 <Link>
                                     <small className="desc-product text-reguler m-0 mt-1">Ubah profile</small>
@@ -161,7 +163,7 @@ class App extends Component {
                             </div>
                         </div>
                     </div>
-                </main>
+                </div>
             </div>
         )
     }

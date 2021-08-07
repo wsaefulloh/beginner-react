@@ -18,6 +18,8 @@
 
 .profile-page {
     background-color: #F5F5F5;
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
 a:hover {
@@ -40,10 +42,7 @@ p {
     margin: 0;
 }
 
-main {
-    margin-top: 80px;
-    margin-bottom: 80px;
-}
+
 
 .search-box-p {
     height: 40px;
