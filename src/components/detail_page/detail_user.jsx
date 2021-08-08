@@ -3,11 +3,21 @@ import React from "react"
 // import { Link } from "react-router-dom"
 import star from "../asset/star_active.png"
 import "bootstrap/dist/css/bootstrap.min.css";
-// import axios from "axios"
-
-
+import axios from "axios"
 
 function Cards(props) {
+
+    const HandDel = async function DeleteHandler(id) {
+    try {
+        const id_produc = id;
+        const res = await axios.delete(`http://localhost:9000/product/del/home/p/${id_produc}`);
+        alert('delete product success')
+        console.log(res)
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
     return (
         <main className="container">
             <section className="container">
@@ -37,7 +47,7 @@ function Cards(props) {
                             <div className="d-flex justify-content-start">
                                 <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
                                 <div>
-                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler"  >Delete</button>
+                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" onClick={() => HandDel(props.id_product)}  >Delete</button>
                                 </div>
                                 <div>
                                     <button className="btn-signup-d p-0 m-0 mx-2 text-reguler">Add Bag</button>
@@ -55,7 +65,6 @@ function Cards(props) {
                 </div>
             </div>
         </main>
-
     )
 }
 

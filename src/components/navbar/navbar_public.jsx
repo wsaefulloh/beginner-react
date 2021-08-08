@@ -12,7 +12,7 @@ import { Link } from "react-router-dom"
 
 const Navigasi = () => {
     return (
-        <header>
+        <header className="mx-auto">
             <nav className="bg-light d-md-block d-none navbar shadow-sm fixed-top">
                 <div className="container justify-content-between align-items-center">
                         <Link to='/'>
@@ -34,9 +34,9 @@ const Navigasi = () => {
                         <div href="My-Bag/mybag_index.html">
                             <img className="me-3" src={shopping_chart} alt="" />
                         </div>
-                        <div href="Login_page/login_customer.html">
+                        <Link to="/login-seller">
                             <button className="btn-login text-reguler">Login</button>
-                        </div>
+                        </Link>
                         <div href="#">
                             <button className="btn-signup text-reguler">Signup</button>
                         </div>

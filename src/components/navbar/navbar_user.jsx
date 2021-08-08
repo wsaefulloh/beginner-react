@@ -15,7 +15,7 @@ import { Link } from "react-router-dom"
 
 const Navigasi = () => {
     return (
-        <header>
+        <header className="mx-auto">
             <nav className="bg-light d-md-block d-none navbar shadow-sm fixed-top">
                 <div className="container justify-content-between align-items-center">
                     <Link to='/home'>
@@ -34,9 +34,11 @@ const Navigasi = () => {
                         </button>
                     </form>
                     <div className="col-4 text-end d-flex justify-content-end align-items-center">
+                        <Link to = '/home/bag'>
                         <div>
                             <img className="me-3" src={cart} alt="" />
                         </div>
+                        </Link>
                         <div>
                             <img className="me-3" src={notif} alt="" />
                         </div>

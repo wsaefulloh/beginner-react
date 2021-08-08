@@ -28,15 +28,15 @@ class App extends Component {
         })
     }
 
-    // DeleteHandler = async () => {
-    //     try {
-    //         const id_product = this.props.match.url;
-    //         const res = await axios.delete(`http://localhost:9000/product/del${id_product}`);
-    //         console.log(res)
-    //     } catch (error) {
-    //         console.error(error.message);
-    //     }
-    // }
+    DeleteHandler = async () => {
+        try {
+            const id_product = this.props.match.url;
+            const res = await axios.delete(`http://localhost:9000/product/del${id_product}`);
+            console.log(res)
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
 
     render() {
         return (
@@ -52,7 +52,8 @@ class App extends Component {
                     description={val.description}
                     category={val.category}
                     id_product={val.id_product}
-                  />
+                    handDel={() => this.DeleteHandler}
+                    />
                 )
               })}
             </div>
