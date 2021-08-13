@@ -1,32 +1,28 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-import HomePublic from "./views/home/index"
-import HomeUser from "./views/home/home_user"
-import DetailPublic from "./views/detail_product/index_detail"
-import DetailUser from "./views/detail_product/index_detail_user"
-import LoginSeller from "./views/login_seller_page/login"
-import LoginCust from "./views/login_customer_page/login"
-import ProfileStore from "./views/profile_page/store"
-import ProfileMyProduct from "./views/profile_page/myproduct"
-import ProfileMyOrder from "./views/profile_page/myorder"
-import ProfileAdd from "./views/profile_page/add"
-import Bag from "./views/bag_page/bag"
+import HomeUser from "./views/home/Home page/home_user"
+import DetailUser from "./views/home/Detail page/index_detail_user"
+import LoginSeller from "./views/login/Login Seller/login"
+import LoginCust from "./views/login/Login Customers/login"
+import RegistSeller from "./views/login/Register Seller/regist-admin"
+import RegistCust from "./views/login/Register Customers/regist-member"
+import ProfileAdd from "./views/profile/Add Page/add"
+import ProfileMyProduct from "./views/profile/MyProduct/myproduct"
+import Bag from "./views/bag/bag"
 
 function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/home/profile/store" component={ProfileStore}></Route>
-                <Route exact path="/home/profile/myproduct" component={ProfileMyProduct}></Route>
-                <Route exact path="/home/profile/myorder" component={ProfileMyOrder}></Route>
-                <Route exact path="/home/profile/add" component={ProfileAdd}></Route>
-                <Route exact path="/home/bag" component={Bag}></Route>
+                <Route exact path="/profile/add" component={ProfileAdd}></Route>
+                <Route exact path="/profile/myproduct" component={ProfileMyProduct}></Route>
+                <Route exact path="/bag" component={Bag}></Route>
                 <Route exact path="/login-cust" component={LoginCust}></Route>
                 <Route exact path="/login-seller" component={LoginSeller}></Route>
-                <Route exact path="/home/p/:id_product" component={DetailUser}></Route>
-                <Route exact path="/p/:id_product" component={DetailPublic}></Route>
-                <Route exact path="/home" component={HomeUser}></Route>
-                <Route exact path="/" component={HomePublic}></Route>
+                <Route exact path="/register-cust" component={RegistCust}></Route>
+                <Route exact path="/register-seller" component={RegistSeller}></Route>
+                <Route exact path="/p/:id_product" component={DetailUser}></Route>
+                <Route exact path="/" component={HomeUser}></Route>
             </Switch>
         </BrowserRouter>
     )

@@ -1,4 +1,4 @@
-import '../category/category.css';
+import '../category/category.scoped.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react"
 import Category1 from "../asset/cat_shirt.png";

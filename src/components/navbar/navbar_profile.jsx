@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./navbar.css";
+import "./navbar.scoped.css";
 import logo from "../asset/logo.png";
 import icon_home from "../asset/home_icon.png";
 import icon_shop from "../asset/cart_icon.png";
@@ -9,7 +9,7 @@ import icon_profile from "../asset/profile_icon.png";
 import cart from "../asset/shopping chart.png";
 import notif from "../asset/notif.png";
 import mail from "../asset/mail.png";
-import profile from "../asset/Mask Group.png";
+import profile from "../asset/profile.png";
 import { Link } from "react-router-dom"
 
 const Navigasi = () => {
@@ -17,14 +17,14 @@ const Navigasi = () => {
         <header className="mx-auto">
             <nav className="bg-light d-md-block d-none navbar shadow-sm fixed-top">
                 <div className="container justify-content-between align-items-center">
-                    <Link to='/home'>
+                    <Link to='/'>
                         <div className="navbar-brand" href="#home">
                             <img src={logo} alt="" height="35px" width="auto" />
                         </div>
                     </Link>
                     
                     <div className="col text-end d-flex justify-content-end align-items-center">
-                    <Link to = '/home/bag'>
+                    <Link to = '/bag'>
                         <div>
                             <img className="me-3" src={cart} alt="" />
                         </div>
@@ -35,7 +35,7 @@ const Navigasi = () => {
                         <div>
                             <img className="me-3" src={mail} alt="" />
                         </div>
-                        <Link to = '/home/profile/add'>
+                        <Link to = '/profile/add'>
                         <div>
                             <img className="me-3" src={profile} alt="" />
                         </div>

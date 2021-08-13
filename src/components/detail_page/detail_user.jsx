@@ -1,4 +1,4 @@
-import "../detail_page/detail.css"
+import "../detail_page/detail.scoped.css"
 import React from "react"
 // import { Link } from "react-router-dom"
 import star from "../asset/star_active.png"
@@ -7,16 +7,23 @@ import axios from "axios"
 
 function Cards(props) {
 
-    const HandDel = async function DeleteHandler(id) {
-    try {
-        const id_produc = id;
-        const res = await axios.delete(`http://localhost:9000/product/del/home/p/${id_produc}`);
-        alert('delete product success')
-        console.log(res)
-    } catch (error) {
-        console.error(error.message);
+    const HandAdd = async function AddHandler(id) {
+        const count = 1;
+        const body = new URLSearchParams();
+        body.append("id_product", id);
+        body.append("count", count );
+        axios({
+            method: "POST",
+            url: `${process.env.REACT_APP_API}/bag/add`,
+            data: body,
+            headers: { 'Content-type': 'application/x-www-form-urlencoded', }
+        }).then((res) => {
+            alert('berhasil menambahkan product ke keranjang')
+            console.log(res)
+        }).catch((err) => {
+            alert('gagal menambahkan product ke keranjang')
+        })
     }
-}
 
     return (
         <main className="container">
@@ -45,12 +52,9 @@ function Cards(props) {
                             <p className="desc-product text-reguler mb-2">Price</p>
                             <h4 className="text-bold m-0 p-0 mb-4">Rp. <span>{props.price_product}</span></h4>
                             <div className="d-flex justify-content-start">
-                                <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
+                                
                                 <div>
-                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" onClick={() => HandDel(props.id_product)}  >Delete</button>
-                                </div>
-                                <div>
-                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler">Add Bag</button>
+                                    <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" onClick={() => HandAdd(props.id_product)} >Add Bag</button>
                                 </div>
                                 <div>
                                     <button className="btn-login-d p-0 m-0 mx-2 text-reguler">Buy Now</button>
@@ -67,18 +71,5 @@ function Cards(props) {
         </main>
     )
 }
-
-// onClick={DeleteHandler(props.id_product)}
-
-// async function DeleteHandler(id) {
-//     try {
-//         const id_produc = id;
-//         const res = await axios.delete(`http://localhost:9000/product/del/home/p/${id_produc}`);
-//         alert('delete product success')
-//         console.log(res)
-//     } catch (error) {
-//         console.error(error.message);
-//     }
-// }
 
 export default Cards

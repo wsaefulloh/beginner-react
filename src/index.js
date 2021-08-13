@@ -2,11 +2,15 @@ import React from "react"
 import ReactDOM from "react-dom"
 import Routers from "./routers"
 import "bootstrap/dist/css/bootstrap.min.css"
+import configStore from "./stores/index"
+import {Provider} from "react-redux"
+
+const store = configStore()
 
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider store={store}>
         <Routers />
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById("root")
 )
 

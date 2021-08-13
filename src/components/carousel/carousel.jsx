@@ -1,4 +1,4 @@
-import '../carousel/carousel.css';
+import '../carousel/carousel.scoped.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react"
 import Card1 from "../asset/Card Promotion_1.png";
