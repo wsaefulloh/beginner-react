@@ -25,6 +25,9 @@ class App extends Component {
         prods: res.data.result,
       })
     })
+    .catch((error) => {
+      console.log(error)
+    })
   }
 
   render() {
