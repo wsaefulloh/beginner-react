@@ -43,7 +43,7 @@ class App extends Component {
         body.append("count", count );
         axios({
             method: "PUT",
-            url: "http://localhost:9000/bag/update",
+            url: `${process.env.REACT_APP_API}/bag/update`,
             data: body,
             headers: { 'Content-type': 'application/x-www-form-urlencoded', }
         }).then((res) => {
@@ -54,7 +54,7 @@ class App extends Component {
     deleteBag(id) {
         axios({
             method: "DELETE",
-            url: `http://localhost:9000/bag/del/${id}`,
+            url: `${process.env.REACT_APP_API}/bag/del/${id}`,
         }).then((res) => {
             this.Getbag()
         })
