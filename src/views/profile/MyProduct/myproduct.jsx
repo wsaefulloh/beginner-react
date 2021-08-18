@@ -27,7 +27,7 @@ class App extends Component {
     deleteProduct(id) {
         axios({
             method: "DELETE",
-            url: `http://localhost:9000/product/del/${id}`,
+            url: `${process.env.REACT_APP_API}/product/del/${id}`,
         }).then((res) => {
             alert('delete product success')
             this.Getproduct()
