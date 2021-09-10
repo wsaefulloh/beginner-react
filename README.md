@@ -27,12 +27,6 @@
 It is an E-Commerce application that makes it easy for us to make online buying and selling transactions anywhere and anytime. Built with React Js on the front end, Node Js and Express Js on the back end. This application has two roles, namely seller and customer. As a seller in this application you can add, delete and update the items you want to sell. As a customer in this application you can add the items you want to buy into the bag to find out the details of the total payment.
 
 
-## Requirements
-
-1. <a href="https://nodejs.org/en/download/">Node Js</a>
-2. Backend API : Blanja - backEnd [`here`](https://github.com/wsaefulloh/back-blanja)
-
-
 ## Feature
 - Authentication users with JWT
 - CRUD Product
@@ -74,6 +68,10 @@ REACT_APP_API = http://localhost:9000
    ```bash
    View the website at: http://localhost:3000
    ```
+
+
+## Backend Repository
+Backend API : Blanja - Backend [here](https://github.com/wsaefulloh/back-blanja)
 
 
 ## License
