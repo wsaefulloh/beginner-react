@@ -1,4 +1,4 @@
-<h1 align="center">Website Blanja</h1>
+<h1 align="center">Blanja Website</h1>
 <p align="center"><img src="https://res.cloudinary.com/calvin-cloud/image/upload/v1627004541/Front%20End/logo_blanja_jtyc2a.svg" alt="Logo.jpg" /></p>
 <p align="center">
     Screenshoot
