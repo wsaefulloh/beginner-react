@@ -4,12 +4,12 @@
     Screenshoot
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290246/SS-Blanja-1_qbgbng.png" width="450px" alt="Logo.jpg" />
-  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290258/SS-Blanja-4_w3avnm.png" width="450px" alt="Logo.jpg" />
+  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290246/SS-Blanja-1_qbgbng.png" width="500px" alt="Logo.jpg" />
+  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290258/SS-Blanja-4_w3avnm.png" width="500px" alt="Logo.jpg" />
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290263/SS-Blanja-2_wz00yf.png" width="450px" alt="Logo.jpg" />
-  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290250/SS-Blanja-3_cpr4tk.png" width="450px" alt="Logo.jpg" />
+  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290263/SS-Blanja-2_wz00yf.png" width="500px" alt="Logo.jpg" />
+  <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290250/SS-Blanja-3_cpr4tk.png" width="500px" alt="Logo.jpg" />
 </p>
 <p align="center">
     <a href="https://adoring-bhabha-c2258e.netlify.app/" target="blank">View Demo</a>
