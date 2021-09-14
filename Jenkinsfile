@@ -16,7 +16,6 @@ pipeline {
         stage('Running Test') {
             steps {
                 sh "echo 'pass'"
-                }
             }
         }
 
