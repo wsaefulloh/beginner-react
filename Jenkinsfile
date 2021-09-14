@@ -4,6 +4,10 @@ def imageName = "wsaefulloh/coba_frontend:devs"
 pipeline {
     agent any
 
+    parameters {
+        booleanParam(name: "RUNTEST", defaultValue: "true", description: "Running testing")
+    }
+
     stages {
         stage('Installing package') {
             steps {
@@ -14,34 +18,13 @@ pipeline {
         }
 
         stage('Running Test') {
+
+            when {
+                params.RUNTEST
+            }
+
             steps {
                 sh "echo 'pass'"
-            }
-        }
-
-        stage('Build Image') {
-            steps {
-                script{
-                    builderImage = docker.build("${imageName}")
-                }
-            }
-        }
-
-        stage('Test Image') {
-            steps {
-                script{
-                    builderImage.inside {
-                        sh "echo 'pass'"
-                    }
-                }
-            }
-        }
-
-        stage('Push Image') {
-            steps {
-                script{
-                    builderImage.push()
-                }
             }
         }
 
