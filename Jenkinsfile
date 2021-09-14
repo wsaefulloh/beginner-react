@@ -18,8 +18,9 @@ pipeline {
         }
 
         stage('Running Test') {
-            expression {
-                when {
+
+            when {
+                expression {
                     params.RUNTEST
                 }
             }
