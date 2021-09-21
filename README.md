@@ -25,10 +25,10 @@
   <h3 align="center">Bags Page</h3>
   <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1631290250/SS-Blanja-3_cpr4tk.png" width="700px" alt="Logo.jpg" align="center" />
   
-  <h3 align="center">Profile Page as Seller Add Product</h3>
+  <h3 align="center">Profile Page : Add Product as Seller</h3>
   <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1632190712/SS%20Blanja%20Github/Blanja-add_product_trs6sr.png" width="700px" alt="Logo.jpg" align="center" />
   
-  <h3 align="center">Profile Page as Seller Update and Delete Product</h3>
+  <h3 align="center">Profile Page : Update and Delete Product as Seller</h3>
   <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1632190721/SS%20Blanja%20Github/Blanja-product-admin_fe6cto.png" width="700px" alt="Logo.jpg" align="center" />
   </div>
   
