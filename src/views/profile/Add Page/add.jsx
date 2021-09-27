@@ -165,6 +165,8 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="new-bg">
+                </div>
             </div>
         )
     }

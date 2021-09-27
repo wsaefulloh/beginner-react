@@ -19,7 +19,12 @@
 .profile-page {
     background-color: #F5F5F5;
     margin-top: 60px;
-    margin-bottom: 80px;
+    height: 100%;
+}
+
+.new-bg {
+    background-color: #F5F5F5;
+    height: 1rem!important;
 }
 
 a:hover {

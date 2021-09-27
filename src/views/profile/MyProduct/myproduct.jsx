@@ -190,23 +190,23 @@ class App extends Component {
                                             <Modal.Body>
                                                 <div className="mt-0">
                                                     <p className="my-2 text-bold">Category</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" placeholder={this.state.id_category} onChange={this.ChangeCategory} />
+                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.id_category} onChange={this.ChangeCategory} />
                                                 </div>
                                                 <div className="mt-1">
                                                     <p className="my-2 text-bold">Name Product</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" placeholder={this.state.name_product} onChange={this.ChangeName} />
+                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.name_product} onChange={this.ChangeName} />
                                                 </div>
                                                 <div className="mt-1">
                                                     <p className="my-2 text-bold">Brand</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" placeholder={this.state.brand_product} onChange={this.ChangeBrand} />
+                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.brand_product} onChange={this.ChangeBrand} />
                                                 </div>
                                                 <div className="mt-1">
                                                     <p className="my-2 text-bold">Price</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" placeholder={this.state.price_product} onChange={this.ChangePrice} />
+                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.price_product} onChange={this.ChangePrice} />
                                                 </div>
                                                 <div className="mt-1">
                                                     <p className="my-2 text-bold">Store</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" placeholder={this.state.store_name} onChange={this.ChangeStore} />
+                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.store_name} onChange={this.ChangeStore} />
                                                 </div>
                                                 <div className="mt-1">
                                                     <p className="my-2 text-bold">Image</p>
@@ -214,7 +214,7 @@ class App extends Component {
                                                 </div>
                                                 <div className="mt-1 mb-2">
                                                     <p className="my-2 text-bold">Description</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" placeholder={this.state.description} onChange={this.ChangeDescription} />
+                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.description} onChange={this.ChangeDescription} />
                                                 </div>
                                                 <Button variant="secondary" onClick={() => this.handleClose()}>
                                                     Cancel update
@@ -229,8 +229,10 @@ class App extends Component {
                                 )
                             })}
                         </section>
+                        </div>
+                        <div className="new-bg">
+                        </div>
                     </div>
-                </div>
             </div>
         )
     }
