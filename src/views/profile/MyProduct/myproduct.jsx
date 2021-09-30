@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Navigasi from '../../../components/navbar/navbar_profile'
 import axios from "axios"
-import "./style/profile.scoped.css"
+import "./style/myproduct.scoped.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom"
 import { Button, Modal } from 'react-bootstrap';
