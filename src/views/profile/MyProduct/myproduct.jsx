@@ -134,18 +134,18 @@ class App extends Component {
                                     <small className="desc-product text-reguler m-0 mt-1">Ubah profile</small>
                                 </Link>
                                 <div className="mt-3">
-                                    <Link>
+                                    {/* <Link>
                                         <button className="btn-signup-p mx-1 text-reguler">Store Profile</button>
-                                    </Link>
+                                    </Link> */}
                                     <Link to='/profile/myproduct'>
                                         <button className="btn-login-p mx-1 text-reguler">My Product</button>
                                     </Link>
                                     <Link to="/profile/add">
                                         <button className="btn-signup-p mx-1 text-reguler">Selling Product</button>
                                     </Link>
-                                    <Link>
+                                    {/* <Link>
                                         <button className="btn-signup-p mx-1 text-reguler">Log Out</button>
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         </div>
@@ -214,7 +214,7 @@ class App extends Component {
                                                 </div>
                                                 <div className="mt-1 mb-2">
                                                     <p className="my-2 text-bold">Description</p>
-                                                    <input type="text" className="search-box-p text-reguler p-3" value={this.state.description} onChange={this.ChangeDescription} />
+                                                    <textarea type="text" className="search-box-p text-reguler p-3" value={this.state.description} onChange={this.ChangeDescription}></textarea>
                                                 </div>
                                                 <Button variant="secondary" onClick={() => this.handleClose()}>
                                                     Cancel update

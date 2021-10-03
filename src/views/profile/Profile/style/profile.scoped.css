@@ -12,7 +12,7 @@
     font-family: Metropolis-Regular;
 }
 
-.text-bold { 
+.text-bold {
     font-family: Metropolis-Bold;
 }
 
@@ -20,6 +20,11 @@
     background-color: #F5F5F5;
     margin-top: 60px;
     height: 100%;
+}
+
+.profile-page-p {
+    background-color: #F5F5F5;
+    min-height: 100vh;
 }
 
 .new-bg {
@@ -49,9 +54,9 @@ p {
 
 
 
-.search-box-p {
+.product-box-p {
     height: 40px;
-    width: 50%;
+    width: 60%;
     border: 1px solid #8e8e8e;
     border-radius: 4px;
     box-sizing: border-box;
@@ -114,12 +119,4 @@ p {
     font-weight: 500;
     font-size: 14px;
     color: #9b9b9b;
-}
-
-.text-update {
-    color: #db3022;
-}
-
-.click:hover {
-    cursor: pointer;
 }

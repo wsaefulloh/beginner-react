@@ -86,18 +86,18 @@ class App extends Component {
                                     <small className="desc-product text-reguler m-0 mt-1">Ubah profile</small>
                                 </Link>
                                 <div className="mt-3">
-                                    <Link>
+                                    {/* <Link>
                                         <button className="btn-signup-p mx-1 text-reguler">Store Profile</button>
-                                    </Link>
+                                    </Link> */}
                                     <Link to='/profile/myproduct'>
                                         <button className="btn-signup-p mx-1 text-reguler">My Product</button>
                                     </Link>
                                     <Link to='/profile/add'>
                                         <button className="btn-login-p mx-1 text-reguler">Selling Product</button>
                                     </Link>
-                                    <Link>
+                                    {/* <Link>
                                         <button className="btn-signup-p mx-1 text-reguler">Log Out</button>
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         </div>

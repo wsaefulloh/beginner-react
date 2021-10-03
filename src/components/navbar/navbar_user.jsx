@@ -12,8 +12,15 @@ import notif from "../asset/notif.png";
 import mail from "../asset/mail.png";
 import profile from "../asset/profile.png";
 import { Link } from "react-router-dom"
+import { useState } from 'react'
 
-const Navigasi = () => {
+const Navigasi = (props) => {
+    const [handleChange, sethandleChange] = useState('')
+
+    const Search = (e) => {
+        e.preventDefault()
+        props.propsHistory.push(`/search?p=${handleChange}`)
+    }
 
     let isAuth = true
     if (isAuth === true) {
@@ -28,14 +35,16 @@ const Navigasi = () => {
                         </Link>
                         <form className="col-6 text-end" action>
                             <input
-                                type="text"
+                                type="search"
                                 className="search-box text-reguler"
                                 placeholder="Search"
+                                onkeypress="handleKeyPress(event)"
                             />
-                            <button className="sort">
+                            
+                        </form>
+                        <button className="sort">
                                 <img src={sort} alt="" />
                             </button>
-                        </form>
                         <div className="col-4 text-end d-flex justify-content-end align-items-center">
                             <Link to = '/bag'>
                             <div>
@@ -48,7 +57,7 @@ const Navigasi = () => {
                             <div>
                                 <img className="me-3" src={mail} alt="" />
                             </div>
-                            <Link to = '/profile/add'>
+                            <Link to = '/profile/myproduct'>
                             <div>
                                 <img className="me-3" src={profile} alt="" />
                             </div>

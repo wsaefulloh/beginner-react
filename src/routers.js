@@ -8,12 +8,16 @@ import RegistSeller from "./views/login/Register Seller/regist-admin"
 import RegistCust from "./views/login/Register Customers/regist-member"
 import ProfileAdd from "./views/profile/Add Page/add"
 import ProfileMyProduct from "./views/profile/MyProduct/myproduct"
+import ProfilePage from "./views/profile/Profile/profile"
 import Bag from "./views/bag/bag"
+import Result from "./views/home/Result page/resultpage"
 
 function App() {
     return (
         <BrowserRouter>
             <Switch>
+                <Route exact path="/search" component={Result}></Route>
+                <Route exact path="/profile/edit" component={ProfilePage}></Route>
                 <Route exact path="/profile/add" component={ProfileAdd}></Route>
                 <Route exact path="/profile/myproduct" component={ProfileMyProduct}></Route>
                 <Route exact path="/bag" component={Bag}></Route>

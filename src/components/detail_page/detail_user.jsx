@@ -1,6 +1,6 @@
 import "../detail_page/detail.scoped.css"
-import React from "react"
-// import { Link } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom"
 import star from "../asset/star_active.png"
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios"
@@ -11,7 +11,7 @@ function Cards(props) {
         const count = 1;
         const body = new URLSearchParams();
         body.append("id_product", id);
-        body.append("count", count );
+        body.append("count", count);
         axios({
             method: "POST",
             url: `${process.env.REACT_APP_API}/bag/add`,
@@ -26,7 +26,7 @@ function Cards(props) {
     }
 
     return (
-        <main className="container">
+        <main className="mb-4">
             <section className="container">
                 <div className="my-3">
                     <span className="text-span">Home &gt; Category &gt; {props.category}</span>
@@ -52,7 +52,7 @@ function Cards(props) {
                             <p className="desc-product text-reguler mb-2">Price</p>
                             <h4 className="text-bold m-0 p-0 mb-4">Rp. <span>{props.price_product}</span></h4>
                             <div className="d-flex justify-content-start">
-                                
+
                                 <div>
                                     <button className="btn-signup-d p-0 m-0 mx-2 text-reguler" onClick={() => HandAdd(props.id_product)} >Add Bag</button>
                                 </div>
@@ -64,8 +64,10 @@ function Cards(props) {
                     </section>
                 </div>
                 <div className="mt-4">
-                    <h5 className="text-bold m-0 mb-3">Description</h5>
-                    <p className="justify text-reguler detail-product">{props.description}</p>
+                    <section className="align-items-center">
+                        <h5 className="text-bold m-0 mb-3">Description</h5>
+                        <div className="justify text-reguler detail-product py-3">{props.description}</div>
+                    </section>
                 </div>
             </div>
         </main>

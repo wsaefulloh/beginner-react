@@ -34,8 +34,8 @@ class App extends Component {
         <section className="container">
           <div className="my-5">
             <div className="my-3">
-              <h3 className="text-bold m-0">New</h3>
-              <small className="text-secondary text-reguler">You've never seen it before!</small>
+              <h3 className="text-bold m-0">Search Result</h3>
+              <small className="text-secondary text-reguler">Result of the product you are looking for</small>
             </div>
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
 

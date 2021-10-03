@@ -116,11 +116,15 @@ main {
 }
 
 .detail-product {
-    font-size: 14px;
+    font-size: 20px;
     color: #9b9b9b;
 }
 
 .image-prods {
     width: 300px;
     object-fit: contain;
+}
+
+.text-desc {
+    font-size: 20px;
 }

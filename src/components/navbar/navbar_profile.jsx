@@ -35,7 +35,7 @@ const Navigasi = () => {
                         <div>
                             <img className="me-3" src={mail} alt="" />
                         </div>
-                        <Link to = '/profile/add'>
+                        <Link to = '/profile/myproduct'>
                         <div>
                             <img className="me-3" src={profile} alt="" />
                         </div>
