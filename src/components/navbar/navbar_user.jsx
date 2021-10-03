@@ -16,10 +16,12 @@ import { useState } from 'react'
 
 const Navigasi = (props) => {
     const [handleChange, sethandleChange] = useState('')
+    const searchView = props.propsHistory
 
     const Search = (e) => {
         e.preventDefault()
-        props.propsHistory.push(`/search?p=${handleChange}`)
+        const { href } = window.location;
+        window.location.href = `/search/${handleChange}`;
     }
 
     let isAuth = true
@@ -33,12 +35,13 @@ const Navigasi = (props) => {
                                 <img src={logo} alt="" height="35px" width="auto" />
                             </div>
                         </Link>
-                        <form className="col-6 text-end" action>
+                        <form className="col-6 text-end" action onSubmit={Search}>
                             <input
-                                type="search"
+                                type="text"
                                 className="search-box text-reguler"
                                 placeholder="Search"
                                 onkeypress="handleKeyPress(event)"
+                                onChange={(e) => sethandleChange(e.target.value)}
                             />
                             
                         </form>

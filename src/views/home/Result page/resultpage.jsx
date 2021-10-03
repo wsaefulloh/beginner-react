@@ -11,76 +11,63 @@ class App extends Component {
     this.state = {
       name: "wahyu",
       prods: [],
+      value: '',
     }
   }
 
   componentDidMount() {
+    const id_search = this.props.match.url;
+    let array = id_search.split("");
+    let length = array.length;
+    let array1 = array.slice(8, (length));
+    let element = ''
+    for (let i = 0; i < array1.length; i++) {
+      element = element + array1[i];
+    }
+    
     axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/product/all`,
+      url: `${process.env.REACT_APP_API}/product/search?name_product=${element}`
     }).then((res) => {
       this.setState({
         prods: res.data.result,
+        value: element,
       })
     })
   }
 
   render() {
-    
+
     return (
       <div>
         <Navigasi />
-        <main>
-        <section className="container">
-          <div className="my-5">
-            <div className="my-3">
-              <h3 className="text-bold m-0">Search Result</h3>
-              <small className="text-secondary text-reguler">Result of the product you are looking for</small>
+        <main className="result-page">
+          <section className="container">
+            <div className="my-5">
+              <div className="my-3">
+                <h3 className="text-bold m-0">Search Result</h3>
+                <small className="text-secondary text-reguler">Result of '{this.state.value}'</small>
+              </div>
+              <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
+
+                {this.state.prods.map((val) => {
+                  return (
+                    <Cards
+                      image_product={val.image_product}
+                      name_product={val.name_product}
+                      price_product={val.price_product}
+                      brand_product={val.brand_product}
+                      id_product={val.id_product}
+                    />
+                  )
+                })}
+
+              </div>
             </div>
-            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
-
-              {this.state.prods.map((val) => {
-                return (
-                  <Cards
-                    image_product={val.image_product}
-                    name_product={val.name_product}
-                    price_product={val.price_product}
-                    brand_product={val.brand_product}
-                    id_product={val.id_product}
-                  />
-                )
-              })}
-
-            </div>
-          </div>
-        </section>
-
-        <section className="container">
-          <div className="my-5">
-            <div className="my-3">
-              <h3 className="text-bold m-0">Popular</h3>
-              <small className="text-secondary text-reguler">Find clothes that are trending recently</small>
-            </div>
-            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
-
-              {this.state.prods.map((val) => {
-                return (
-                  <Cards
-                    image_product={val.image_product}
-                    name_product={val.name_product}
-                    price_product={val.price_product}
-                    brand_product={val.brand_product}
-                    id_product={val.id_product}
-                  />
-                )
-              })}
-
-            </div>
-          </div>
-        </section>
+          </section>
         </main>
-        
-        </div>
+
+      </div>
     )
   }
 }

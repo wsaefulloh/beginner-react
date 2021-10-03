@@ -47,7 +47,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="margin-bottom">
                 <Navigasi />
                 {this.state.prods.map((val) => {
                     return (
@@ -63,9 +63,9 @@ class App extends Component {
                     )
                 })}
 
-                <div className>
+                <div className="mb-6">
                     <div className="container">
-                        <div className="">
+                        <div>
                             <section className="align-items-center">
                                 <h5 className="text-bold m-0 mb-3">Related Product</h5>
                                 <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 box">
@@ -81,7 +81,6 @@ class App extends Component {
                                         )
                                     })}
                                 </div>
-
                             </section>
                         </div>
                     </div>

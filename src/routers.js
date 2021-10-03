@@ -16,7 +16,7 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/search" component={Result}></Route>
+                <Route exact path="/search/:name" component={Result}></Route>
                 <Route exact path="/profile/edit" component={ProfilePage}></Route>
                 <Route exact path="/profile/add" component={ProfileAdd}></Route>
                 <Route exact path="/profile/myproduct" component={ProfileMyProduct}></Route>
