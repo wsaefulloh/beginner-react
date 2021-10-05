@@ -15,7 +15,7 @@ const Users = (state = initialState, action) => {
             }
         }
 
-        case "SET_USSERS": {
+        case "SET_USERS": {
             return {
                 ...state,
                 data: payload

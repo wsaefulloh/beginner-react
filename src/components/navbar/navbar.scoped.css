@@ -133,3 +133,7 @@ main {
 .price {
     color: #db3022;
 }
+
+.profile-btn {
+    cursor: pointer;
+}

@@ -4,12 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/style.scoped.css"
 import { Link } from "react-router-dom"
 import logo from "../../../components/asset/logo.png"
+import Swal from 'sweetalert2'
+import { useHistory } from 'react-router-dom';
 
 const App = () => {
     const [name_users, setName] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [role] = useState('member')
+    const history = useHistory();
 
     const Register = async () => {
         const body = new URLSearchParams();
@@ -23,10 +26,11 @@ const App = () => {
             data: body,
             headers: { 'Content-type': 'application/x-www-form-urlencoded', }
         }).then((res) => {
-            alert('berhasil mendaftar')
+            history.push('/login-cust');
+            Swal.fire("OK", "Register berhasil", "success");
             console.log(res)
         }).catch((err) => {
-            alert('username sudah terdaftar')
+            Swal.fire("FAILED", "Username sudah terdaftar", "error");
         })
     }
 
@@ -72,7 +76,7 @@ const App = () => {
                                 <input type="text" onChange={inputUsername} className="col-10 form-input text-reguler" placeholder="Your username" />
                             </div>
                             <div className="col-12 text-center">
-                                <input type="text" onChange={inputPassword} className="col-10 form-input text-reguler" placeholder="Your password" />
+                                <input type="password" onChange={inputPassword} className="col-10 form-input text-reguler" placeholder="Your password" />
                             </div>
                             <div className="col-12 text-center mx-auto align-items-center d-flex">
                                 <button onClick={Register} className="col-10 text-submit text-reguler mx-auto">PRIMARY</button>

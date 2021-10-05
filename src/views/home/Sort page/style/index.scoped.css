@@ -1,0 +1,46 @@
+@font-face {
+	src: url("../../../../components/asset/Metropolis Font family/Metropolis-Regular.otf");
+	font-family: Metropolis-Regular;
+}
+
+@font-face {
+	src: url("../../../../components/asset/Metropolis Font family/Metropolis-Bold.otf");
+	font-family: Metropolis-Bold;
+}
+
+.text-reguler {
+    font-family: Metropolis-Regular;
+}
+
+.text-bold {
+    font-family: Metropolis-Bold;
+}
+
+a:hover {
+    text-decoration: none;
+    color: unset;
+}
+
+a {
+    text-decoration: none;
+    color: #8e8e8e;
+}
+
+span {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+main {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.result-page {
+    margin-top: 95px;
+}

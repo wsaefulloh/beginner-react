@@ -24,7 +24,7 @@
 
 .new-bg {
     background-color: #F5F5F5;
-    height: 1rem!important;
+    height: 2rem!important;
 }
 
 a:hover {
@@ -49,9 +49,9 @@ p {
 
 
 
-.search-box-p {
+.search-box-p-add {
     height: 40px;
-    width: 50%;
+    width: 100%;
     border: 1px solid #8e8e8e;
     border-radius: 4px;
     box-sizing: border-box;
@@ -104,9 +104,9 @@ p {
     color: #9b9b9b;
 }
 
-.desc-box {
+.desc-box-add {
     height: 100px;
-    width: 50%;
+    width: 100%;
     border: 1px solid #8e8e8e;
     border-radius: 4px;
     box-sizing: border-box;

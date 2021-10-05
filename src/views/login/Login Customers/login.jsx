@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/style.scoped.css"
 import { Link } from "react-router-dom"
 import logo from "../../../components/asset/logo.png"
+import Swal from 'sweetalert2'
 
 class App extends Component {
     constructor(props) {
@@ -14,16 +15,36 @@ class App extends Component {
         }
     }
 
+    getData = (token) => {
+        axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API}/users/user/${this.state.username}`,
+            headers: {
+                token_auth: token,
+            },
+        })
+            .then((res) => {
+                this.props.UserSet(res.data.result[0])
+                this.props.history.push("/") // pindah halam
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
     SubmitHandler = async () => {
         try {
             const body = new URLSearchParams();
             body.set('username', this.state.username);
             body.set('password', this.state.password);
             const res = await axios.post(`${process.env.REACT_APP_API}/login`, body, { 'Content-type': 'application/x-www-form-urlencoded', });
-            console.log(res)
+            const {token} = res.data.result[0]
+            console.log(token)
+            this.props.AuthSet(token)
+            this.getData(token)
         } catch (error) {
             console.error(error);
-            console.log(this.state)
+            Swal.fire("FAILED", "Gagal Login", "error");
         }
 
         // const body = new URLSearchParams();

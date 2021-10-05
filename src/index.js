@@ -3,13 +3,18 @@ import ReactDOM from "react-dom"
 import Routers from "./routers"
 import "bootstrap/dist/css/bootstrap.min.css"
 import configStore from "./stores/index"
+import {persistStore} from 'redux-persist'
 import {Provider} from "react-redux"
+import {PersistGate} from 'redux-persist/integration/react'
 
 const store = configStore()
+const persistor = persistStore(store)
 
 ReactDOM.render(
     <Provider store={store}>
+        <PersistGate persistor={persistor} loading={<div>loading..</div>}>
         <Routers />
+        </PersistGate>
     </Provider>,
     document.getElementById("root")
 )

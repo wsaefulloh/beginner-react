@@ -5,6 +5,10 @@ import "./style/add.scoped.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom"
 import FormData from 'form-data'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import ActionUsers from "../../../stores/actions/users"
+import Swal from 'sweetalert2'
 
 class App extends Component {
     constructor(props) {
@@ -17,8 +21,17 @@ class App extends Component {
             id_category:'',
             image:'',
             description:'',
+            profile_name:'',
         }
     }
+
+    componentDidMount() {
+        
+            this.setState({
+              profile_name: this.props.users.data.name_user,
+            });
+          
+      }
 
     SubmitHandler = async () => {
         try {
@@ -34,10 +47,11 @@ class App extends Component {
             body.append('description',this.state.description);
             const res = await axios.post(`${process.env.REACT_APP_API}/product/add`, body, {'Content-type':'multipart/form-data',});
             console.log(this.state)
-            alert('berhasil upload')
+            Swal.fire("OK", "Add Product Success", "success");
             console.log(res)
         } catch (error) {
             console.error(error.message);
+            Swal.fire("FAILED", "Fill Out the Form Correctly", "error");
         }
     }
 
@@ -81,8 +95,8 @@ class App extends Component {
                         {/* profile */}
                         <div className="col-12 bg-white shadow-sm py-4">
                             <div className="text-center">
-                                <h3 className="text-bold m-0 mt-3">Johanes Mikael</h3>
-                                <Link>
+                                <h3 className="text-bold m-0 mt-3">{this.state.profile_name}</h3>
+                                <Link to='/profile/edit'>
                                     <small className="desc-product text-reguler m-0 mt-1">Ubah profile</small>
                                 </Link>
                                 <div className="mt-3">
@@ -107,7 +121,7 @@ class App extends Component {
                                 <h5 className="text-bold m-0">Category</h5>
                                 <small className="desc-product text-reguler m-0 mt-2">Type category</small>
                                 <div className="mt-3">
-                                    <input type="text" className="search-box-p text-reguler p-3" placeholder="1-Shirt, 2-Short, 3-Jacket, 4-Pants, 5-Shoes" onChange={this.ChangeCategory}/>
+                                    <input type="text" className="search-box-p-add text-reguler p-3" placeholder="1-Shirt, 2-Short, 3-Jacket, 4-Pants, 5-Shoes" onChange={this.ChangeCategory}/>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +131,7 @@ class App extends Component {
                                 <h5 className="text-bold m-0">Inventory</h5>
                                 <small className="desc-product text-reguler m-0 mt-2">Name product</small>
                                 <div className="mt-3">
-                                    <input type="text" className="search-box-p text-reguler p-3" onChange={this.ChangeName} />
+                                    <input type="text" className="search-box-p-add text-reguler p-3" onChange={this.ChangeName} />
                                 </div>
                             </div>
                         </div>
@@ -127,13 +141,13 @@ class App extends Component {
                                 <h5 className="text-bold m-0">Details</h5>
                                 <small className="desc-product text-reguler m-0 mt-2">Detail product</small>
                                 <div className="mt-3">
-                                    <input type="text" className="search-box-p text-reguler p-3" placeholder="Price" onChange={this.ChangePrice} />
+                                    <input type="text" className="search-box-p-add text-reguler p-3" placeholder="Price" onChange={this.ChangePrice} />
                                 </div>
                                 <div className="mt-3">
-                                    <input type="text" className="search-box-p text-reguler p-3" placeholder="Brand" onChange={this.ChangeBrand} />
+                                    <input type="text" className="search-box-p-add text-reguler p-3" placeholder="Brand" onChange={this.ChangeBrand} />
                                 </div>
                                 <div className="mt-3">
-                                    <input type="text" className="search-box-p text-reguler p-3" placeholder="Store" onChange={this.ChangeStore} />
+                                    <input type="text" className="search-box-p-add text-reguler p-3" placeholder="Store" onChange={this.ChangeStore} />
                                 </div>
                             </div>
                         </div>
@@ -153,7 +167,7 @@ class App extends Component {
                                 <h5 className="text-bold m-0">Description</h5>
                                 <small className="desc-product text-reguler m-0 mt-2">Description product</small>
                                 <div className="mt-3">
-                                    <input type="text" className="search-box-p text-reguler p-3 desc-box" onChange={this.ChangeDescription} />
+                                    <textarea type="text" className="search-box-p-add text-reguler p-3 desc-box-add" onChange={this.ChangeDescription}></textarea>
                                 </div>
                             </div>
                         </div>
@@ -172,4 +186,17 @@ class App extends Component {
     }
 }
 
-export default App
+const mapStateToProps = (state) => {
+    return {
+        users: state.users,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        AuthSet: bindActionCreators(ActionUsers.AuthSet, dispatch),
+        UserSet: bindActionCreators(ActionUsers.UserSet, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

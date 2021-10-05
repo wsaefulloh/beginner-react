@@ -1,17 +1,78 @@
 import React, { Component } from 'react'
-// import axios from "axios"
+import axios from "axios"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/style.scoped.css"
 import { Link } from "react-router-dom"
 import logo from "../../../components/asset/logo.png"
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import ActionUsers from "../../../stores/actions/users"
+import Swal from 'sweetalert2'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            email: null,
+            username: null,
             password: null,
         }
+    }
+
+    getData = (token) => {
+        axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_API}/users/user/${this.state.username}`,
+            headers: {
+                token_auth: token,
+            },
+        })
+            .then((res) => {
+                this.props.UserSet(res.data.result[0])
+                this.props.history.push("/") // pindah halam
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    SubmitHandler = async () => {
+        try {
+            const body = new URLSearchParams();
+            body.set('username', this.state.username);
+            body.set('password', this.state.password);
+            const res = await axios.post(`${process.env.REACT_APP_API}/login`, body, { 'Content-type': 'application/x-www-form-urlencoded', });
+            const {token} = res.data.result[0]
+            console.log(token)
+            this.props.AuthSet(token)
+            this.getData(token)
+        } catch (error) {
+            console.error(error);
+            Swal.fire("FAILED", "Gagal Login", "error");
+        }
+
+        // const body = new URLSearchParams();
+        
+        // console.log(this.state)
+        // axios({
+        //     method: "GET",
+        //     url: "http://localhost:9000/login",
+        //     data: body,
+        //     headers: { 'Content-type': 'application/x-www-form-urlencoded', }
+        // }).then((res) => {
+        //     alert('berhasil login')
+        //     console.log(res)
+        // }).catch((err) => {
+        //     console.log(err)
+        //     console.log(body)
+        // })
+    }
+
+    ChangeUsername = (e) => {
+        this.setState({ username: e.target.value })
+    }
+
+    ChangePassword = (e) => {
+        this.setState({ password: e.target.value })
     }
 
     render() {
@@ -37,23 +98,23 @@ class App extends Component {
                                     <p className="text-reguler">Seller</p>
                                 </Link>
                             </div>
-                            <form action="../index.html" className="row mt-4 g-3 needs-validation" validate>
+                            <div className="row mt-4 g-3">
                                 <div className="col-12 text-center">
-                                    <input className="col-10 form-input text-reguler" type="text" id="email" placeholder="Email" autoComplete="off" required />
+                                    <input onChange={this.ChangeUsername} className="col-10 form-input text-reguler" type="text" placeholder="Username"/>
                                 </div>
                                 <div className="col-12 text-center">
-                                    <input className="col-10 form-input text-reguler" type="password" id="password" placeholder="Password" autoComplete="off" required />
+                                    <input onChange={this.ChangePassword} className="col-10 form-input text-reguler" type="password" placeholder="Password" />
                                 </div>
                                 {/* <div className="col-12 text-end">
                                     <Link to="#" className="col-10 d-block mx-auto text-reguler text-forgot">Forgot password?</Link>
                                 </div> */}
                                 <div className="col-12 text-center mx-auto align-items-center d-flex">
-                                    <button className="col-10 text-submit text-reguler mx-auto" type="submit">PRIMARY</button>
+                                    <button onClick={this.SubmitHandler} className="col-10 text-submit text-reguler mx-auto">PRIMARY</button>
                                 </div>
                                 <div className="col-12 text-center">
                                     <p className="col-10 mx-auto text-reguler">Don't have a Blanja account? <Link className="text-reguler text-forgot" to="/register-cust">Register</Link></p>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -62,4 +123,17 @@ class App extends Component {
     }
 }
 
-export default App
+const mapStateToProps = (state) => {
+    return {
+        users: state.users,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        AuthSet: bindActionCreators(ActionUsers.AuthSet, dispatch),
+        UserSet: bindActionCreators(ActionUsers.UserSet, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Navigasi from '../../../components/navbar/navbar_user'
 import Detail from '../../../components/detail_page/detail_user'
-import Cards from '../../../components/card_product/card_user.jsx'
+import Cards from '../../../components/card_product/card_user copy'
 import axios from "axios"
 import "./style/index_detail.scoped.css"
 import "bootstrap/dist/css/bootstrap.min.css";
