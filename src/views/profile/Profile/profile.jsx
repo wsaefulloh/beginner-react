@@ -3,77 +3,96 @@ import Navigasi from '../../../components/navbar/navbar_profile'
 import axios from "axios"
 import "./style/profile.scoped.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import FormData from 'form-data'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import ActionUsers from "../../../stores/actions/users"
+import Swal from 'sweetalert2'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name : '',
-            old_password : '',
-            password : '',
-            username : '',
-            email : '',
-            alamat : '',
-            token : '',
+            name: '',
+            old_password: '',
+            password: '',
+            username: '',
+            email: '',
+            alamat: '',
+            token: '',
         }
+    }
+
+    SubmitHandler = async () => {
+
+        const token = this.state.token
+        const body = new URLSearchParams();
+        body.append('name_users', this.state.name);
+        body.append('old_password', this.state.old_password);
+        body.append('new_password', this.state.password);
+        body.append('username', this.state.username);
+        body.append('email', this.state.email);
+        body.append('alamat', this.state.alamat);
+        // const res = await axios.put(`${process.env.REACT_APP_API}/users/update`, body,{'token_auth': `${token}`,'Content-type':'multipart/form-data',});
+        axios({
+            method: "PUT",
+            url: `${process.env.REACT_APP_API}/users/update`,
+            data: body,
+            headers: {
+                token_auth: token,
+                'Content-type': 'application/x-www-form-urlencoded'
+            },
+        })
+            .then((res) => {
+                alert('berhasil upload')
+                this.props.UnSetUser()
+                this.props.history.push("/login-cust")
+                Swal.fire("OK", "Update Profile Success", "success");
+            })
+            .catch((error) => {
+                console.error(error.message);
+                Swal.fire("Failed", "Update Profile Failed", "error");
+            })
+
+    }
+
+    ChangeName = (e) => {
+        this.setState({ name: e.target.value })
+    }
+
+    ChangeOldPass = (e) => {
+        this.setState({ old_password: e.target.value })
+    }
+
+    ChangePass = (e) => {
+        this.setState({ password: e.target.value })
+    }
+
+    ChangeEmail = (e) => {
+        this.setState({ email: e.target.value })
+    }
+
+    ChangeAlamat = (e) => {
+        this.setState({ alamat: e.target.value })
     }
 
     componentDidMount() {
         this.setState({
-            name : this.props.users.data.name_user,
-            username : this.props.users.data.username,
-            email : this.props.users.data.username,
-            alamat : this.props.users.data.alamat,
-            token : this.props.users.token,
-          });
-    }
-
-    SubmitHandler = async () => {
-        try {
-            const token = this.state.token
-            const categories = parseInt(this.state.id_category)
-            const price = parseInt(this.state.price_product)
-            const body = new FormData ();
-            body.append('name_product',this.state.name_product);
-            body.append('price_product', price);
-            body.append('brand_product',this.state.brand_product);
-            body.append('store_name',this.state.store_name);
-            body.append('id_category', categories);
-            body.append('image',this.state.image);
-            body.append('description',this.state.description);
-            const res = await axios.post(`${process.env.REACT_APP_API}/product/add`, body, {'Content-type':'multipart/form-data',token_auth: token,});
-            console.log(this.state)
-            alert('berhasil upload')
-            console.log(res)
-            this.props.history.push("/login-cust") // pindah halam
-        } catch (error) {
-            console.error(error.message);
-        }
-    }
-
-    ChangeName = (e) => {
-        this.setState({name : e.target.value})
-    }
-
-    ChangeOldPass = (e) => {
-        this.setState({old_password : e.target.value})
-    }
-
-    ChangePass = (e) => {
-        this.setState({password : e.target.value})
-    }
-
-    ChangeEmail = (e) => {
-        this.setState({email : e.target.value})
-    }
-
-    ChangeAlamat = (e) => {
-        this.setState({alamat : e.target.value})
+            name: this.props.users.data.name_user
+        });
+        this.setState({
+            username: this.props.users.data.username
+        });
+        this.setState({
+            email: this.props.users.data.email
+        });
+        this.setState({
+            alamat: this.props.users.data.alamat
+        });
+        this.setState({
+            token: this.props.users.token
+        });
     }
 
     render() {
@@ -94,31 +113,31 @@ class App extends Component {
                             <div className="px-4 d-flex align-content-center align-items-center">
                                 <h6 className="col-3 text-bold m-0">Nama Lengkap</h6>
                                 <div className="m-0 col-9">
-                                    <input type="text" className="product-box-p text-reguler p-3" placeholder="Nama Lengkap" onChange={this.ChangeName}/>
+                                    <input type="text" className="product-box-p text-reguler p-3" placeholder={this.state.name} onChange={this.ChangeName} />
                                 </div>
                             </div>
                             <div className="mt-3 px-4 d-flex align-content-center align-items-center">
                                 <h6 className="col-3 text-bold m-0">Email</h6>
                                 <div className="m-0 col-9">
-                                    <input type="text" className="product-box-p text-reguler p-3" placeholder="Email" onChange={this.ChangeEmail}/>
+                                    <input type="text" className="product-box-p text-reguler p-3" placeholder={this.state.email} onChange={this.ChangeEmail} />
                                 </div>
                             </div>
                             <div className="mt-3 px-4 d-flex align-content-center align-items-center">
                                 <h6 className="col-3 text-bold m-0">Username</h6>
                                 <div className="m-0 col-9">
-                                    <input type="text" className="product-box-p text-reguler p-3" placeholder={this.state.username} readOnly/>
+                                    <input type="text" className="product-box-p text-reguler p-3" placeholder={this.state.username} readOnly />
                                 </div>
                             </div>
                             <div className="mt-3 px-4 d-flex align-content-center align-items-center">
                                 <h6 className="col-3 text-bold m-0">Password Lama</h6>
                                 <div className="m-0 col-9">
-                                    <input type="text" className="product-box-p text-reguler p-3" onChange={this.ChangeOldPass}/>
+                                    <input type="text" className="product-box-p text-reguler p-3" onChange={this.ChangeOldPass} />
                                 </div>
                             </div>
                             <div className="mt-3 px-4 d-flex align-content-center align-items-center">
                                 <h6 className="col-3 text-bold m-0">Password Baru</h6>
                                 <div className="m-0 col-9">
-                                    <input type="text" className="product-box-p text-reguler p-3" onChange={this.ChangePass}/>
+                                    <input type="text" className="product-box-p text-reguler p-3" onChange={this.ChangePass} />
                                 </div>
                             </div>
                         </div>
@@ -127,7 +146,7 @@ class App extends Component {
                             <div className="px-4">
                                 <h5 className="text-bold m-0">Alamat</h5>
                                 <div className="mt-3">
-                                    <textarea type="text" className="search-box-p text-reguler p-3 desc-box" onChange={this.ChangeAlamat}></textarea>
+                                    <textarea type="text" className="search-box-p text-reguler p-3 desc-box" placeholder={this.state.alamat} onChange={this.ChangeAlamat}></textarea>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +174,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         AuthSet: bindActionCreators(ActionUsers.AuthSet, dispatch),
-        UserSet: bindActionCreators(ActionUsers.UserSet, dispatch)
+        UserSet: bindActionCreators(ActionUsers.UserSet, dispatch),
+        UnSetUser: bindActionCreators(ActionUsers.AuthClear, dispatch),
     }
 }
 
