@@ -15,11 +15,13 @@ import { Link } from "react-router-dom"
 import { useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import ActionUsers from "../../stores/actions/users"
+import { useHistory } from "react-router-dom";
 
 const Navigasi = (props) => {
     const {isAuth} = useSelector((state) => state.users)
     const {data} = useSelector((state) => state.users)
     const Dispatch = useDispatch()
+    let history = useHistory();
     const logout = () => {
         Dispatch(ActionUsers.AuthClear())
     }
@@ -28,11 +30,12 @@ const Navigasi = (props) => {
 
     const Search = (e) => {
         e.preventDefault()
-        window.location.href = `/search/${handleChange}`;
+        // window.location.href = `/search/${handleChange}`;
+        history.push(`/search/${handleChange}`)
     }
 
     const Sort = (e) => {
-        window.location.href = `/sort/${handleChangeSort}`;
+        history.push(`/sort/${handleChangeSort}`)
     }
 
     // let isAuth = true
