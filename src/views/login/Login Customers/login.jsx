@@ -4,6 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/style.scoped.css"
 import { Link } from "react-router-dom"
 import logo from "../../../components/asset/logo.png"
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import ActionUsers from "../../../stores/actions/users"
 import Swal from 'sweetalert2'
 
 class App extends Component {
@@ -120,4 +123,17 @@ class App extends Component {
     }
 }
 
-export default App
+const mapStateToProps = (state) => {
+    return {
+        users: state.users,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        AuthSet: bindActionCreators(ActionUsers.AuthSet, dispatch),
+        UserSet: bindActionCreators(ActionUsers.UserSet, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

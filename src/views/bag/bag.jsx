@@ -4,6 +4,9 @@ import Navigasi from '../../components/navbar/navbar_user'
 import "./style/bag.scoped.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import ActionUsers from "../../stores/actions/users"
 
 class App extends Component {
     constructor(props) {
@@ -18,7 +21,7 @@ class App extends Component {
     Getbag() {
         axios({
             method: "GET",
-            url: `${process.env.REACT_APP_API}/bag/all`,
+            url: `${process.env.REACT_APP_API}/bag/username/${this.props.users.data.username}`,
         }).then((res) => {
             let harga = 0
             for (let i = 0; i < res.data.result.length; i++) {
@@ -161,4 +164,17 @@ class App extends Component {
     }
 }
 
-export default App
+const mapStateToProps = (state) => {
+    return {
+        users: state.users,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        AuthSet: bindActionCreators(ActionUsers.AuthSet, dispatch),
+        UserSet: bindActionCreators(ActionUsers.UserSet, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

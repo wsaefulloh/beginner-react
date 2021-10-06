@@ -44,6 +44,7 @@ class App extends Component {
             body.append('store_name',this.state.store_name);
             body.append('id_category', categories);
             body.append('image',this.state.image);
+            body.append('username',this.props.users.data.username);
             body.append('description',this.state.description);
             const res = await axios.post(`${process.env.REACT_APP_API}/product/add`, body, {'Content-type':'multipart/form-data',});
             console.log(this.state)

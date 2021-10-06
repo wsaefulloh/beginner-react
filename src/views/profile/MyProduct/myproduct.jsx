@@ -93,7 +93,7 @@ class App extends Component {
     Getproduct() {
         axios({
             method: "GET",
-            url: `${process.env.REACT_APP_API}/product/all`,
+            url: `${process.env.REACT_APP_API}/product/username/${this.props.users.data.username}`,
         }).then((res) => {
             this.setState({
                 prods: res.data.result,

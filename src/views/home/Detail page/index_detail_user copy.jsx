@@ -41,9 +41,7 @@ class App extends Component {
         
     }
 
-    Reload() {
-        window.location.reload()
-    }
+    
 
     
 
