@@ -60,7 +60,7 @@ const Navigasi = (props) => {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={Sort}>Save changes</button>
+                                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={Sort}>Save changes</button>
                             </div>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ const Navigasi = (props) => {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={Sort}>Save changes</button>
+                                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={Sort}>Save changes</button>
                             </div>
                         </div>
                     </div>
@@ -368,7 +368,7 @@ const Navigasi = (props) => {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary" onClick={Sort}>Save changes</button>
+                                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={Sort}>Save changes</button>
                             </div>
                         </div>
                     </div>
