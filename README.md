@@ -11,41 +11,51 @@
   <tr>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550530/SS%20Blanja%20Github/11_u56hcp.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Login Page</p>
     </th>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550528/SS%20Blanja%20Github/10_kwyu4u.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Register Page</p>
     </th>
   </tr>
  <tr>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550540/SS%20Blanja%20Github/9_pviqgg.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Home Page</p>
     </th>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550534/SS%20Blanja%20Github/8_kozpdi.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Home Page</p>
     </th>
   </tr>
   <tr>
    <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550536/SS%20Blanja%20Github/1_ekquxl.png" width="400px" alt="Arkademylogo.svg" />
+       <p align="center">Result Page</p>
     </th>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550526/SS%20Blanja%20Github/7_frvhy5.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Detail Product</p>
     </th>
   </tr>
   <tr>
    <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550524/SS%20Blanja%20Github/2_yiswtq.png" width="400px" alt="Arkademylogo.svg" />
+       <p align="center">Bags Page</p>
     </th>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550529/SS%20Blanja%20Github/6_cbgvwo.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Update Page</p>
     </th>
   </tr>
   <tr>
    <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550519/SS%20Blanja%20Github/5_d0zhg6.png" width="400px" alt="Arkademylogo.svg" />
+       <p align="center">Add Product Page</p>
     </th>
     <th>
       <img src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1633550519/SS%20Blanja%20Github/4_aaglvh.png" width="400px" alt="Arkademylogo.svg" />
+        <p align="center">Edit Profile Page</p>
     </th>
   </tr>
 </table>
